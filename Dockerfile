@@ -16,6 +16,7 @@ RUN apt-get install -y \
     supervisor \
     catdoc \
     certbot \
+    nano \
     poppler-utils \
     libav-tools \
     gpac
@@ -27,7 +28,7 @@ RUN echo "deb-src http://nginx.org/packages/debian/ stretch nginx" >> /etc/apt/s
 RUN cd /tmp && wget http://nginx.org/keys/nginx_signing.key && apt-key add nginx_signing.key
 RUN apt-get update && apt-get install -y nginx logrotate
 
-RUN apt-get install -y php7.0 php7.0-mysql php7.0-xml php7.0-curl php7.0-gd php7.0-mcrypt php7.0-intl php7.0-zip php7.0-mbstring php7.0-fpm php7.0-sqlite php7.0-ldap
+RUN apt-get install -y php7.1 php7.1-mysql php7.1-xml php7.1-curl php7.1-gd php7.1-mcrypt php7.1-intl php7.1-zip php7.1-mbstring php7.1-fpm php7.1-sqlite php7.1-ldap
 
 RUN curl -sS https://getcomposer.org/installer | php -- --install-dir=/usr/bin
 RUN /usr/bin/composer.phar self-update
@@ -35,7 +36,7 @@ RUN /usr/bin/composer.phar self-update
 RUN curl -sL https://deb.nodesource.com/setup_8.x | bash -
 RUN apt-get install -y nodejs
 
-RUN npm install -g bower forever node-gyp gulp
+RUN npm install -g bower node-gyp gulp
 
 #
 # Remove the packages that are no longer required after the package has been installed
