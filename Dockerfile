@@ -34,7 +34,7 @@ RUN echo "deb https://packages.sury.org/php/ stretch main" | tee /etc/apt/source
 
 RUN apt-get update
 
-RUN apt-get install -y nginx logrotate php7.1 php7.1-mysql php7.1-xml php7.1-curl php7.1-gd php7.1-mcrypt php7.1-intl php7.1-zip php7.1-mbstring php7.1-fpm php7.1-sqlite php7.1-ldap
+RUN apt-get install -y nginx logrotate php7.1 php7.1-mysql php7.1-xml php7.1-curl php7.1-gd php7.1-mcrypt php7.1-intl php7.1-zip php7.1-mbstring php7.1-fpm php7.1-sqlite php7.1-ldap php7.1-redis
 
 RUN curl -sS https://getcomposer.org/installer | php -- --install-dir=/usr/bin
 RUN /usr/bin/composer.phar self-update
